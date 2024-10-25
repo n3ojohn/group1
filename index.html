@@ -6,16 +6,6 @@
     <title>CriThink</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        /* Style for the blank page */
-        #blankPage {
-            display: none;
-            height: 100vh;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-    </style>
 </head>
 <body>
     <!-- Navbar -->
@@ -64,8 +54,8 @@
     <section id="generate-question" class="py-5 text-center">
         <div class="container">
             <p class="lead mb-4">Generate a question to test your knowledge on this topic.</p>
-            <!-- Link that changes the current page to blank -->
-            <a href="#" class="btn btn-lg btn-primary" id="generateQuestionBtn">Generate Question</a>
+            <!-- Link to new page -->
+            <a href="generate_question.html" class="btn btn-lg btn-primary">Generate Question</a>
         </div>
     </section>
 
@@ -99,52 +89,6 @@
         </div>
     </section>
 
-    <!-- Question Generation Page -->
-    <div id="blankPage" class="d-flex flex-column">
-        <!-- Navbar for the Blank Page -->
-        <nav class="navbar navbar-light bg-light">
-            <div class="container-fluid">
-                <div class="d-flex align-items-center">
-                    <button class="btn btn-primary me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLeftBlank" aria-controls="offcanvasLeftBlank">
-                        <!-- Hamburger Icon -->
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <a class="navbar-brand mb-0 h1" href="#">CriThink</a>
-                </div>
-            </div>
-        </nav>
-
-        <!-- Offcanvas Sidebar for the Blank Page -->
-        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasLeftBlank" aria-labelledby="offcanvasLeftBlankLabel">
-            <div class="offcanvas-header">
-                <h5 id="offcanvasLeftBlankLabel">Menu</h5>
-                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Question Generation Content -->
-        <div class="text-center flex-fill d-flex justify-content-center align-items-center flex-column">
-            <h1>Generate Your Question</h1>
-            <p>Click the button below to generate a random question.</p>
-            <button class="btn btn-lg btn-success" id="newQuestionBtn">Generate New Question</button>
-            <div id="questionDisplay" class="mt-4"></div>
-            <a href="#" class="btn btn-primary mt-4" id="goBackBtn">Go Back</a>
-        </div>
-    </div>
-
     <!-- Footer -->
     <footer class="bg-dark text-white text-center py-3">
         <div class="container">
@@ -154,31 +98,5 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Script to handle the "Generate Question" button click
-        document.getElementById('generateQuestionBtn').addEventListener('click', function() {
-            document.body.style.display = 'none'; // Hide the main content
-            document.getElementById('blankPage').style.display = 'flex'; // Show the question generation page
-        });
-
-        // Script to handle the "Go Back" button click
-        document.getElementById('goBackBtn').addEventListener('click', function() {
-            document.body.style.display = 'block'; // Show the main content
-            document.getElementById('blankPage').style.display = 'none'; // Hide the blank page
-        });
-
-        // Script to generate a random question
-        document.getElementById('newQuestionBtn').addEventListener('click', function() {
-            const questions = [
-                "What is the capital of France?",
-                "Explain the process of photosynthesis.",
-                "What are Newton's three laws of motion?",
-                "Define the term 'photosynthesis'.",
-                "What is the Pythagorean theorem?",
-            ];
-            const randomQuestion = questions[Math.floor(Math.random() * questions.length)];
-            document.getElementById('questionDisplay').innerHTML = `<h4>${randomQuestion}</h4>`;
-        });
-    </script>
 </body>
 </html>
